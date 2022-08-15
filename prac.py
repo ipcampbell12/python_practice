@@ -242,7 +242,7 @@ def minion_game(string):
 
     # {'kevin': len(kevin), 'stuart': len(stuart)}
 
-    return kevin_dict
+    return kevin_subs
 
 
 # find all combinations with variable lenght
