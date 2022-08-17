@@ -231,21 +231,38 @@ def letter_count(name):
 # E 1
 
 
-def minion_game(string):
+""" def minion_game(string):
     vowels = ['A', 'E', 'I', 'O', 'U']
 
     kevin = [''.join(x) for l in range(1, len(string))
              for x in combinations(string, l) if x[0] in vowels]
-    kevin_subs = [word for word in kevin if word in string]
-    kevin_count = [kevin_subs.count(word) for word in kevin_subs]
-    kevin_dict = dict(zip(kevin_subs, kevin_count))
 
-    # {'kevin': len(kevin), 'stuart': len(stuart)}
+    kevin_subs = []
+
+    for word in kevin:
+        index = 0
+        while kevin.count(word) < string.count(word):
+            kevin_subs.append(word)
+            index += 1
 
     return kevin_subs
 
 
-# find all combinations with variable lenght
-# (x for l in range(2, len(arr)) for x in itertools.combinations(arr, l))
+ """
+
+
+# someone else's solution
+def minion_game(string):
+    vowel = ['A', 'E', 'I', 'O', 'U']
+    S = []
+    K = []
+    for i in range(len(string)):
+        if string[i] in vowel:
+            K.append(string[i:])  # grab
+        else:
+            S.append(string[i:])
+
+    return K
+
 
 print(minion_game('BANANA'))
