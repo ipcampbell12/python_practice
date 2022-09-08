@@ -1,5 +1,6 @@
 
 
+import math
 #
 #
 #
@@ -179,8 +180,6 @@ print(delete_nth([1, 2, 3, 1, 1, 2, 1, 2, 3, 3, 2, 4, 5, 3, 1], 3))
 # not just remove next value but remove ALL the next values after n """
 
 
-from itertools import combinations, permutations
-from jinja2 import pass_context
 source1 = 'https://www.geeksforgeeks.org/python-sort-list-of-lists-by-lexicographic-value-and-then-length/'
 source2 = 'https://stackoverflow.com/questions/20145842/python-sorting-by-multiple-criteria'
 source3 = 'https://www.geeksforgeeks.org/python-sort-python-dictionaries-by-key-or-value/'
@@ -252,7 +251,7 @@ def letter_count(name):
 
 
 # someone else's solution
-def minion_game(string):
+""" def minion_game(string):
     vowel = ['A', 'E', 'I', 'O', 'U']
     S = []
     K = []
@@ -265,4 +264,56 @@ def minion_game(string):
     return K
 
 
-print(minion_game('BANANA'))
+print(minion_game('BANANA')) """
+
+
+def get_digits(number):
+    digits = len(str(number))
+    return f"{number} has {digits} digits"
+
+
+print(get_digits(255))
+
+
+def get_square_root(number):
+    sqrt = math.sqrt(number)
+    return f"The square root of {number} is {sqrt}"
+
+
+print(get_square_root(255))
+
+
+def squared(number):
+    sqrd = number**2
+    return f"{number} squared is {sqrd}"
+
+
+print(squared(255))
+
+
+def even_odd(number):
+    status = ''
+    if number % 2 == 0:
+        status = 'even'
+    if number % 2 != 0:
+        status = 'odd'
+    return f"{number} is an {status} number"
+
+
+print(even_odd(10))
+
+
+def prime_composite(number):
+    flag = False
+    if number > 1:
+        for i in range(2, number):
+            if number % i == 0:
+                flag = True
+                break
+    if flag == True:
+        return f"{number} is a composite number"
+    else:
+        return f"{number} is a prime number"
+
+
+print(prime_composite(11))
