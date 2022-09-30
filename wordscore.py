@@ -10,9 +10,6 @@ All letters will be lowercase and all inputs will be valid.
  """
 
 
-from pickletools import string1
-
-
 def high(x):
 
     # 1. find value for each letter in alphabet
