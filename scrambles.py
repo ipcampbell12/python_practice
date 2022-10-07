@@ -2,9 +2,12 @@
  """
 
 # FIRST ATTEMPT - TOO INEFFICIENT
+
+
 # def scramble(s1, s2):
 #     s1list = [char for char in s1]
 #     s2list = [char for char in s2]
+
 #     newlist = []
 
 #     for char in s2list:
@@ -13,6 +16,13 @@
 #             s1list.remove(char)
 
 #     return ''.join(newlist) == s2
+
+
+def scramble(s1, s2):
+    s1list = [char for char in s1]
+    s2list = [char for char in s2]
+    char_list = filter(lambda x: x in s1,)
+    return char_list
 
 
 # if any character in s1 has a character in s2 that has a lower count, then it will fail
