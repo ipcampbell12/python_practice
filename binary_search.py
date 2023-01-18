@@ -1,3 +1,5 @@
+
+
 my_arr = [-2, 3, 4, 7, 8, 9, 11, 13]
 
 
@@ -5,18 +7,19 @@ target = 11
 
 
 def search(arr, targ):
-    left = arr[0]
-    right = arr[-1]
+    left = 0
+    right = len(arr)-1
 
-    middle = len(arr)/2
-
-    for num in arr:
-        if num == targ and num > middle:
-            middle = left
-        elif num == targ and num < middle:
-            middle = right
-
-    return middle
+    while left <= right:
+        middle = (len(arr)//2)
+        if arr[middle] == targ:
+            return middle
+        elif targ < arr[middle]:
+            right = middle - 1
+        elif targ > arr[middle]:
+            left = middle + 1
+# don't include middle, that's why + 1 or -1
+    return -1
 
 
 print(search(my_arr, target))
